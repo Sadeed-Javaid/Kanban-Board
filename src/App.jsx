@@ -66,6 +66,28 @@ function App() {
     });
   }
 
+  function handleDeleteCard(cardId) {
+    // find which column currently holds this card
+    const sourceColumn = Object.values(columns).find((col) =>
+      col.cardIds.includes(cardId),
+    );
+    if (!sourceColumn) return;
+
+    // remove the card's id from its column
+    setColumns({
+      ...columns,
+      [sourceColumn.id]: {
+        ...sourceColumn,
+        cardIds: sourceColumn.cardIds.filter((id) => id !== cardId),
+      },
+    });
+
+    // remove the card itself from the cards lookup
+    const updatedCards = { ...cards };
+    delete updatedCards[cardId];
+    setCards(updatedCards);
+  }
+
   function handleAddCard() {
     if (newCardText.trim() === "") retunr;
 
@@ -114,6 +136,7 @@ function App() {
               title={column.title}
               cardIds={column.cardIds}
               cards={cards}
+              onDeleteCard={handleDeleteCard}
             />
           ))}
         </div>
