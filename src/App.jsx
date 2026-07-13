@@ -59,22 +59,12 @@ function App() {
 
         <div className="flex gap-4 " >
           {Object.values(columns).map((column) => (
-            // <div
-            //   key={column.id}
-            //   className="bg-gray-200 rounded-lg p-3 w-64 flex flex-col gap-2"
-            // >
-            //   <h2 className="font-semibold text-gray-700 mb-2">
-            //     {column.title}
-            //   </h2>
-            //   {column.cardIds.map((cardId) => (
-            //     <div
-            //       key={cardId}
-            //       className="bg-white rounded-md shadow p-3 text-sm text-gray-800"
-            //     >
-            //       {cards[cardId].text}
-            //     </div>
-            //   ))}
-            // </div>
+            <Column
+            key={column.id}
+            title={column.title}
+            cardIds={column.cardIds}
+            cards={cards}
+            />
           ))}
         </div>
         </div>
