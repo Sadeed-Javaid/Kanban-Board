@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Column from "./components/Column"
+import { DndContext } from '@dnd-kit/core';
 import "./App.css";
 
 const initialColumns = {
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div>
+      <DndContext>
       <div className="flex gap-4 flex-col p-6 bg-red-500 min-h-screen">
         
         <div className="flex flex-col gap-4 max-w-[800px] " > 
@@ -70,6 +72,7 @@ function App() {
         </div>
 
       </div>
+      </DndContext>
     </div>
   );
 }
