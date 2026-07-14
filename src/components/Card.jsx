@@ -69,7 +69,7 @@ function Card({ id, text, accent, onDelete }) {
             e.stopPropagation();
             onDelete();
           }}
-          className="text-ink/30 hover:text-coral text-xs shrink-0"
+          className="text-ink/30 hover:text-coral text-[15px] font-bold text-red-700 shrink-0"
         >
           ✕
         </button>
