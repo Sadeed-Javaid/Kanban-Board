@@ -6,7 +6,7 @@ function Navbar({ onStartTask }) {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="cursor-pointer flex items-center gap-2 font-display text-lg font-semibold text-ink tracking-tight"
         >
-          <span className="w-2 h-2 rounded-full bg-coral" />
+          <span className="w-2 h-2 rounded-full bg-green-700" />
           Flowcard
         </button>
 
